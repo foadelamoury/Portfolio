@@ -654,7 +654,10 @@ img {
 /*==================== SERVICES ====================*/
 .services__container {
   gap: 1.5rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  justify-items: center;
+  max-width: 768px;
+  margin: 0 auto;
 }
 
 .services__content {
@@ -664,6 +667,8 @@ img {
   border-radius: 0.25rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   transition: 0.3s;
+  width: 100%;
+  max-width: 400px;
 }
 
 .services__content:hover {
@@ -753,25 +758,28 @@ img {
 /*==================== PORTFOLIO ====================*/
 .portfolio__container {
   overflow: initial;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .portfolio__content {
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .portfolio__img {
-  width: 265px;
+  width: 400px;
   border-radius: 0.5rem;
   justify-self: center;
 }
 
 .portfolio__title {
-  font-size: var(--h3-font-size);
+  font-size: var(--h2-font-size);
   margin-bottom: var(--mb-0-5);
 }
 
 .portfolio__description {
   margin-bottom: var(--mb-0-75);
+  font-size: var(--normal-font-size);
 }
 
 .portfolio__button:hover .button__icon {
@@ -784,16 +792,16 @@ img {
 }
 
 .swiper-portfolio-icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--first-color);
 }
 
 .swiper-button-prev {
-  left: -0.5rem;
+  left: -1rem;
 }
 
 .swiper-button-next {
-  right: -0.5rem;
+  right: -1rem;
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets {
@@ -1078,10 +1086,10 @@ img {
   }
 
   .services__content {
-    padding-right: 3.5rem;
+    padding-left: 5rem;
   }
   .services__modal {
-    padding: 0 0.5rem;
+    padding: 0 0rem;
   }
 
   .project__img {
