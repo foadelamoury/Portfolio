@@ -210,3 +210,32 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+// Contact Form
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Get form data
+    const formData = {
+        from_name: document.getElementById('name').value,
+        from_email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+    };
+
+    // Send email using EmailJS
+    emailjs.send('service_xgj01zj', 'template_qzq7rju', formData)
+        .then(function(response) {
+            console.log('SUCCESS!', response);
+            alert('Message sent successfully!');
+            contactForm.reset();
+        }, function(error) {
+            console.error('FAILED...', error);
+            // Log more details about the error
+            console.error('Error status:', error.status);
+            console.error('Error text:', error.text);
+            alert('Failed to send message. Please check the console for details.');
+        });
+});
